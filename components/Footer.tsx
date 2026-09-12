@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { site } from "@/lib/data/site";
 import { NewsletterForm } from "./NewsletterForm";
+import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-chocolate/10 bg-chocolate text-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3 lg:col-span-1">
-          <p className="font-display text-2xl text-blush">{site.name}</p>
+          <BrandLogo size="md" invert showWordmark />
           <p className="text-sm leading-relaxed text-cream/75">
             Gourmet cupcakes baked fresh daily. Signature pink-box delivery across
             Toronto &amp; the GTA since {site.founded}.

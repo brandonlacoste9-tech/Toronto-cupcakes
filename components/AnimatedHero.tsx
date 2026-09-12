@@ -58,14 +58,30 @@ export function AnimatedHero() {
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-16 pt-28 sm:px-6 sm:pb-20 md:justify-center md:pb-24 md:pt-28">
-        <div className="max-w-xl">
-          <p className="hero-copy-1 text-xs font-medium uppercase tracking-[0.28em] text-blush">
+        <div className="max-w-2xl">
+          <p className="hero-copy-1 text-xs font-medium uppercase tracking-[0.32em] text-gold-soft">
             Est. {site.founded} · Toronto &amp; GTA
           </p>
-          <h1 className="hero-copy-2 font-display mt-4 text-5xl leading-[0.95] tracking-tight sm:text-7xl md:text-8xl">
-            {site.name.toUpperCase()}
+
+          <h1 className="hero-title mt-5" aria-label={site.name}>
+            <span className="hero-title-toronto" aria-hidden="true">
+              Toronto
+            </span>
+            <span className="hero-title-rule" aria-hidden="true" />
+            <span className="hero-title-cupcake" aria-hidden="true">
+              {"CUPCAKE".split("").map((letter, i) => (
+                <span
+                  key={`${letter}-${i}`}
+                  className="hero-letter"
+                  style={{ animationDelay: `${0.2 + i * 0.055}s` }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </span>
           </h1>
-          <p className="hero-copy-3 mt-5 text-lg text-cream/90 sm:text-xl">
+
+          <p className="hero-copy-3 mt-6 max-w-md text-lg leading-relaxed text-cream/90 sm:text-xl">
             {site.tagline}
           </p>
           <div className="hero-copy-4 mt-8 flex flex-wrap gap-3">

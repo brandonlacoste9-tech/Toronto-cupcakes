@@ -4,8 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { navLinks, site } from "@/lib/data/site";
+import { navLinks } from "@/lib/data/site";
 import { useCart } from "@/lib/cart/CartProvider";
+import { BrandLogo } from "@/components/BrandLogo";
 
 export function Header() {
   const pathname = usePathname();
@@ -25,13 +26,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-chocolate/10 bg-cream/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link
-          href="/"
-          className="font-display text-xl tracking-wide text-chocolate sm:text-2xl"
-        >
-          {site.name}
-        </Link>
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
+        <BrandLogo size="md" />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
           {navLinks.map((link) => {
@@ -137,11 +133,7 @@ function PinkBoxIcon() {
         stroke="#C4788A"
         strokeWidth="1.5"
       />
-      <path
-        d="M3 11h18"
-        stroke="#C4788A"
-        strokeWidth="1.5"
-      />
+      <path d="M3 11h18" stroke="#C4788A" strokeWidth="1.5" />
       <path
         d="M12 8V4.5M9 6.5c1.2-1.5 2.8-1.5 3 0M15 6.5c-1.2-1.5-2.8-1.5-3 0"
         stroke="#C4788A"
